@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import AdoptionPage from '../AdoptionPage/AdoptionPage';
 import LandingPage from '../LandingPage/LandingPage';
 import PageNotFound from '../PageNotFound/PageNotFound';
+import AdoptPrompt from '../AdoptPrompt/AdoptPrompt';
 
 class Root extends React.Component {
   renderRoutes() {
@@ -10,6 +11,7 @@ class Root extends React.Component {
       <Switch>
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/adoption' component={AdoptionPage} />
+        <Route exact path='/adopt-prompt' component={AdoptPrompt} />
         <Route component={PageNotFound} />
       </Switch>
     );

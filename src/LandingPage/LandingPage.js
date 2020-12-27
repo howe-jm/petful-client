@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AdoptionPage from '../AdoptionPage/AdoptionPage';
 
 export default function LandingPage() {
   return (

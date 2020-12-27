@@ -15,7 +15,7 @@ export default class LandingPage extends React.Component {
   }
 
   matchPets() {
-    // this.setState({ testCounter: this.state.testCounter + 1 });
+    this.setState({ testCounter: this.state.testCounter + 1 });
     // If cat
     //Fetch the next cat.
     //Set adoptedPet state.
@@ -43,7 +43,7 @@ export default class LandingPage extends React.Component {
     if (this.state.adoptedPet !== null) {
       return (
         <div>
-          <img src={this.state.adoptedPet.imgURL} alt='Picture of a pet.' />
+          <img src={this.state.adoptedPet.imgURL} alt='Pet' />
           <p>Name: {this.state.adoptedPet.name}</p>
           <p>Breed: {this.state.adoptedPet.breed}</p>
         </div>
