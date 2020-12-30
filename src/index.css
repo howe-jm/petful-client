@@ -1,0 +1,23 @@
+body {
+    background-color: #1A393B;
+}
+
+.main-container {
+    background-color:  #000314;
+    color: #8C3B22
+}
+
+.main-container h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: #9B685B
+}
+
+.adoption-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.pet-card-container {
+    display: flex;
+}

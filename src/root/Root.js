@@ -1,32 +1,42 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import AdoptionPage from '../AdoptionPage/AdoptionPage';
-import LandingPage from '../LandingPage/LandingPage';
-import PageNotFound from '../PageNotFound/PageNotFound';
-import AdoptPrompt from '../AdoptPrompt/AdoptPrompt';
+import React, { Component } from 'react';
+import { Router, Route, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import AdoptionQueue from '../AdoptionQueue/AdoptionQueue';
+import Landing from '../Landing/Landing';
+import Adopt from '../Adopt/Adopt';
+import AdoptionSuccessful from '../AdoptionSuccessful/AdoptionSuccessful';
+import WaitingPage from '../WaitingPage/WaitingPage';
 
-class Root extends React.Component {
+const history = createBrowserHistory();
+
+class Root extends Component {
+  state = { queue: [], user: '', adopting: true };
+
   renderRoutes() {
     return (
       <Switch>
-        <Route exact path='/' component={LandingPage} />
-        <Route exact path='/adoption' component={AdoptionPage} />
-        <Route exact path='/adopt-prompt' component={AdoptPrompt} />
-        <Route component={PageNotFound} />
+        <Route exact path={'/'} render={() => <Landing addUser={this.addUser} setAdopting={this.setAdopting} />} />
+        <Route exact path={'/adopt'} component={Adopt} />
+        <Route exact path={'/queue'} render={() => <WaitingPage user={this.state.user} />} />
+        <Route exact path={'/success'} component={AdoptionSuccessful} />
       </Switch>
     );
   }
 
+  addUser = (user) => {
+    this.setState({ user });
+  };
+
+  setAdopting = (adopting) => {
+    this.setState({ adopting });
+  };
+
   render() {
     return (
-      <div className='root-main'>
-        <header>
-          <h1>Petful</h1>
-        </header>
-        <main>
-          <h2>Welcome to Petful!</h2>
-          {this.renderRoutes()}
-        </main>
+      <div className='main-container'>
+        <h1>Petful</h1>
+        {!this.state.adopting && <AdoptionQueue user={this.state.user} setAdopting={this.setAdopting} />}
+        <Router history={history}>{this.renderRoutes()}</Router>
       </div>
     );
   }
