@@ -1,0 +1,23 @@
+.adoption-queue {
+    border: 2px solid white;
+    width: 40%;
+    align-self: center;
+    background-color: #B0CFD4;
+    color: #2B303A;
+}
+
+.queue-list {
+    list-style: none;
+    padding: 0;
+    font-size: 22px;
+}
+
+
+.queue-button {
+    border: 0px solid black;
+    border-radius: 4px;
+    background-color: #2B303A;
+    color: #B0CFD4;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 12px;
+}

@@ -1,0 +1,12 @@
+.name-button {
+    border: 0px solid black;
+    border-radius: 4px;
+    font-family: 'Permanent Marker', cursive;
+    color: #9B685B;
+    background-color: #F7E7B6;
+}
+
+#user {
+    text-align: center;
+    border-radius: 14px;
+}

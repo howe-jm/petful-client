@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import './Landing.css';
 
 class Landing extends Component {
   state = {
@@ -21,7 +22,7 @@ class Landing extends Component {
       body: raw,
     };
 
-    fetch('http://localhost:8000/people/', requestOptions)
+    fetch('https://polar-shelf-23661.herokuapp.com/people/', requestOptions)
       .then((result) => {
         this.props.addUser(this.state.user);
         this.props.history.push({
@@ -33,27 +34,29 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className='home-container'>
-        <div className='home-form'>
+      <div className='landing-container'>
+        <div className='landing-form'>
           <h2>Welcome to Petful!</h2>
           <p>Please enter your name to join the queue!</p>
           <p>When your name reaches the top of the list, you will be able to select a pet to adopt.</p>
 
           <form onSubmit={this.handleSubmitForm}>
-            <div className='form-control'>
-              <label htmlFor='name'>Name </label>
+            <div className='name-input'>
+              <label htmlFor='name' className='name-input-field'>
+                Enter Your Name
+              </label>
               <input
                 required
                 type='text'
                 id='user'
                 value={this.state.user}
                 onChange={(e) => this.setState({ user: e.target.value })}
-                placeholder='Your Name'
+                placeholder='First Name'
               />
             </div>
-            <div className='HomeSubmitButton'>
-              <button type='submit' className='submitBtn'>
-                Submit
+            <div className='name-submit'>
+              <button type='submit' className='name-button'>
+                Find Your New Best Friend
               </button>
             </div>
           </form>

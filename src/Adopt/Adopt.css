@@ -1,0 +1,31 @@
+.adoption-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.pet-card-container {
+    display: flex;
+    flex-flow: row wrap;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    background-color: #B0CFD4;
+    color: #2B303A;
+    padding: 5px;
+}
+
+.pet-card-container img {
+    max-height: 200px;
+    width: auto;
+}
+
+.pet-card {
+    margin: 20px;
+}
+
+.pet-card-container button {
+    border: 0px solid black;
+    border-radius: 4px;
+    font-family: 'Permanent Marker', cursive;
+    color: #9B685B;
+    background-color: #F7E7B6;
+}

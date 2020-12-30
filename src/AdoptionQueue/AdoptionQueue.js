@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import names from '../store';
+import './AdoptionQueue.css';
 
 class AdoptionQueue extends Component {
   state = { user: this.props.user, queue: [] };
@@ -11,7 +12,7 @@ class AdoptionQueue extends Component {
       method: 'GET',
     };
 
-    fetch('http://localhost:8000/people/all', requestOptions)
+    fetch('https://polar-shelf-23661.herokuapp.com/people/all', requestOptions)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -37,7 +38,7 @@ class AdoptionQueue extends Component {
       body: raw,
     };
 
-    return fetch('http://localhost:8000/people/', requestOptions);
+    return fetch('https://polar-shelf-23661.herokuapp.com/people/', requestOptions);
   };
 
   dequeueName = (type) => {
@@ -52,7 +53,7 @@ class AdoptionQueue extends Component {
       body: raw,
     };
 
-    return fetch('http://localhost:8000/pets', requestOptions);
+    return fetch('https://polar-shelf-23661.herokuapp.com/pets', requestOptions);
   };
 
   recursiveQueue = async () => {
@@ -73,6 +74,8 @@ class AdoptionQueue extends Component {
   render() {
     return (
       <div className='adoption-queue'>
+        <h2>Adoption Line</h2>
+        <p>Please wait for your name to reach the top of the list!</p>
         <ul className='queue-list'>
           {this.state.queue &&
             this.state.queue.map((person, i) => (
@@ -82,7 +85,7 @@ class AdoptionQueue extends Component {
             ))}
         </ul>
         {this.props.user && (
-          <button onClick={this.recursiveQueue}>
+          <button className='queue-button' onClick={this.recursiveQueue}>
             <p>Welcome, {this.props.user}!</p> <p>Please click here to get in line.</p>
           </button>
         )}

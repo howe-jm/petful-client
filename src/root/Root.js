@@ -33,10 +33,12 @@ class Root extends Component {
 
   render() {
     return (
-      <div className='main-container'>
-        <h1>Petful</h1>
-        {!this.state.adopting && <AdoptionQueue user={this.state.user} setAdopting={this.setAdopting} />}
-        <Router history={history}>{this.renderRoutes()}</Router>
+      <div className='content-wrapper'>
+        <div className='main-container'>
+          <h1>Petful</h1>
+          <Router history={history}>{this.renderRoutes()}</Router>
+          {!this.state.adopting && <AdoptionQueue user={this.state.user} setAdopting={this.setAdopting} />}
+        </div>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Adopt.css';
 
 class Adopt extends Component {
   state = {
@@ -31,7 +32,7 @@ class Adopt extends Component {
       redirect: 'follow',
     };
 
-    fetch(`http://localhost:8000/pets`, requestOptions)
+    fetch(`https://polar-shelf-23661.herokuapp.com/pets`, requestOptions)
       .then((pets) => pets.json())
       .then((pets) => this.setState({ pets }));
   }
@@ -40,7 +41,8 @@ class Adopt extends Component {
     this.fetchPets();
   }
 
-  handleClickAdopt(type) {
+  handleClickAdopt(event, type) {
+    event.preventDefault();
     var myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
 
@@ -53,7 +55,7 @@ class Adopt extends Component {
       redirect: 'follow',
     };
 
-    fetch('http://localhost:8000/pets', requestOptions)
+    fetch('https://polar-shelf-23661.herokuapp.com/pets', requestOptions)
       .then((response) => response.text())
       .then((result) => (window.location.href = '/success'))
       .catch((error) => console.log('error', error));
@@ -79,11 +81,11 @@ class Adopt extends Component {
         <h2>You're up!</h2>
         <p>Please select between a dog and a cat.</p>
         <div className='pet-card-container'>
-          <form className='select-dog' onSubmit={() => this.handleClickAdopt('dog')}>
+          <form className='select-dog' onSubmit={(e) => this.handleClickAdopt(e, 'dog')}>
             {this.petDisplay(dog)}
             <button className='adopt-dog'>Adopt {dog.name}</button>
           </form>
-          <form className='select-cat' onSubmit={() => this.handleClickAdopt('cat')}>
+          <form className='select-cat' onSubmit={(e) => this.handleClickAdopt(e, 'cat')}>
             {this.petDisplay(cat)}
             <button className='adopt-cat'>Adopt {cat.name}</button>
           </form>
