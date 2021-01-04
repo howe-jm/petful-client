@@ -32,7 +32,7 @@ class Adopt extends Component {
       redirect: 'follow',
     };
 
-    fetch(`https://quiet-earth-92546.herokuapp.com/pets`, requestOptions)
+    fetch(`https://shrouded-tundra-87420.herokuapp.com/pets`, requestOptions)
       .then((pets) => pets.json())
       .then((pets) => this.setState({ pets }));
   }
@@ -55,7 +55,7 @@ class Adopt extends Component {
       redirect: 'follow',
     };
 
-    fetch('https://quiet-earth-92546.herokuapp.com/pets', requestOptions)
+    fetch('https://shrouded-tundra-87420.herokuapp.com/pets', requestOptions)
       .then((response) => response.text())
       .then((result) => (window.location.href = '/success'))
       .catch((error) => console.log('error', error));
