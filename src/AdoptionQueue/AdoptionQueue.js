@@ -12,7 +12,7 @@ class AdoptionQueue extends Component {
       method: 'GET',
     };
 
-    fetch('https://polar-shelf-23661.herokuapp.com/people/all', requestOptions)
+    fetch('https://quiet-earth-92546.herokuapp.com/people/all', requestOptions)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -38,7 +38,7 @@ class AdoptionQueue extends Component {
       body: raw,
     };
 
-    return fetch('https://polar-shelf-23661.herokuapp.com/people/', requestOptions);
+    return fetch('https://quiet-earth-92546.herokuapp.com/people/', requestOptions);
   };
 
   dequeueName = (type) => {
@@ -53,7 +53,7 @@ class AdoptionQueue extends Component {
       body: raw,
     };
 
-    return fetch('https://polar-shelf-23661.herokuapp.com/pets', requestOptions);
+    return fetch('https://quiet-earth-92546.herokuapp.com/pets', requestOptions);
   };
 
   recursiveQueue = async () => {

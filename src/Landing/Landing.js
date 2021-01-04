@@ -22,7 +22,7 @@ class Landing extends Component {
       body: raw,
     };
 
-    fetch('https://polar-shelf-23661.herokuapp.com/people/', requestOptions)
+    fetch('https://quiet-earth-92546.herokuapp.com/people/', requestOptions)
       .then((result) => {
         this.props.addUser(this.state.user);
         this.props.history.push({
