@@ -28,7 +28,6 @@ class Header extends Component {
 
   render() {
     let { cats, dogs } = this.state.pets;
-    console.log(this.state.pets.cats[0]);
     return (
       <div className='header'>
         <h1>Petful!</h1>

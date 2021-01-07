@@ -26,8 +26,6 @@ class AdoptionQueue extends Component {
     this.fetchQueue();
   }
 
-  componentDidUpdate() {}
-
   enqueueName = (person) => {
     var myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
@@ -89,7 +87,8 @@ class AdoptionQueue extends Component {
       this.dequeueName(catOrDog);
       this.enqueueName(newName);
       this.requeuePet(catOrDog, this.state.liveAdoption.pet);
-      this.timer = setTimeout(() => this.recursiveQueue(), 1000);
+      this.fetchQueue();
+      this.timer = setTimeout(() => this.recursiveQueue(), 5000);
     }
   };
 
