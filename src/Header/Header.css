@@ -1,0 +1,21 @@
+img {
+    width: 100%;
+}
+
+.pet-pictures {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.img-container {
+    max-width: 10vw;
+    margin:0 2px -9px 2px;
+}
+
+.pet-name-text {
+    background: #F7E7B6;
+    color: #2B303A;
+    height: 30px;
+    margin: 10px 0px 0px 0px;
+}

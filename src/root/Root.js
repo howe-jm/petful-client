@@ -6,17 +6,18 @@ import Landing from '../Landing/Landing';
 import Adopt from '../Adopt/Adopt';
 import AdoptionSuccessful from '../AdoptionSuccessful/AdoptionSuccessful';
 import WaitingPage from '../WaitingPage/WaitingPage';
+import Header from '../Header/Header';
 
 const history = createBrowserHistory();
 
 class Root extends Component {
-  state = { queue: [], user: '', adopting: true };
+  state = { queue: [], user: '', adopting: true, queued: false };
 
   renderRoutes() {
     return (
       <Switch>
         <Route exact path={'/'} render={() => <Landing addUser={this.addUser} setAdopting={this.setAdopting} />} />
-        <Route exact path={'/adopt'} component={Adopt} />
+        <Route exact path={'/adopt'} render={() => <Adopt setAdopting={this.setAdopting} />} />
         <Route exact path={'/queue'} render={() => <WaitingPage user={this.state.user} />} />
         <Route exact path={'/success'} component={AdoptionSuccessful} />
       </Switch>
@@ -31,13 +32,24 @@ class Root extends Component {
     this.setState({ adopting });
   };
 
+  setQueued = (queued) => {
+    this.setState({ queued });
+  };
+
   render() {
     return (
       <div className='content-wrapper'>
         <div className='main-container'>
-          <h1>Petful</h1>
+          <Header />
           <Router history={history}>{this.renderRoutes()}</Router>
-          {!this.state.adopting && <AdoptionQueue user={this.state.user} setAdopting={this.setAdopting} />}
+          {!this.state.adopting && (
+            <AdoptionQueue
+              user={this.state.user}
+              queued={this.state.queued}
+              setQueued={this.setQueued}
+              setAdopting={this.setAdopting}
+            />
+          )}
         </div>
       </div>
     );
