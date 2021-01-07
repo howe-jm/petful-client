@@ -12,7 +12,7 @@ class AdoptionQueue extends Component {
       method: 'GET',
     };
 
-    fetch('http://localhost:8000/people/all', requestOptions)
+    fetch('https://shrouded-tundra-87420.herokuapp.com/people/all', requestOptions)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -40,7 +40,7 @@ class AdoptionQueue extends Component {
       body: raw,
     };
 
-    return fetch('http://localhost:8000/people/', requestOptions);
+    return fetch('https://shrouded-tundra-87420.herokuapp.com/people/', requestOptions);
   };
 
   requeuePet = (type, pet) => {
@@ -55,7 +55,7 @@ class AdoptionQueue extends Component {
       body: raw,
     };
 
-    return fetch('http://localhost:8000/pets/return', requestOptions);
+    return fetch('https://shrouded-tundra-87420.herokuapp.com/pets/return', requestOptions);
   };
 
   dequeueName = (type) => {
@@ -70,7 +70,7 @@ class AdoptionQueue extends Component {
       body: raw,
     };
 
-    fetch('http://localhost:8000/pets', requestOptions)
+    fetch('https://shrouded-tundra-87420.herokuapp.com/pets', requestOptions)
       .then((res) => res.json())
       .then((res) => this.setState({ liveAdoption: res }))
       .then(() => this.fetchQueue())
