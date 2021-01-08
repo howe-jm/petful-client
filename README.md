@@ -1,70 +1,59 @@
-# Petful Client
+# Welcome to Petful!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello!
 
-## Available Scripts
+### Petful is a pet adoption webapp using the following technologies:
 
-In the project directory, you can run:
+Client: Node.js, coupled with React for responsive web design.
 
-### `npm start`
+Server: Node.js with Express.js.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Petful allows a user to enter a queue and wait in line to adopt a pet. While waiting, the user can watch other peoples' names move through the queue, with each one adopting a pet as they reach the top. When it's their turn, the user can choose between the next available cat or dog in their respective queues.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Read on for more information, as well as instructions for deploying this app.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Useful Links
 
-### `npm run build`
+Petful was designed function as a client dependent on an API server, and as such, requires both ends to be completely functional. Here are the links to the repositories, and a live version of the app:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Petful Client Repository: https://github.com/howe-jm/petful-client
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Petful API Repository: https://github.com/howe-jm/petful-server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Live App: https://petful-client-three.vercel.app/
 
-### `npm run eject`
+## Petful Client
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### How To Use Petful
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. When you're ready to adopt a pet, enter your name in to the text input box and click the "Find Your New Best Friend" button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Click the button when prompted to enter the queue.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Wait until it's your turn in the queue. While you wait, you will be able to see other users adopting pets as their turn comes up.
 
-## Learn More
+4. When it's your turn, click on the appropriate button below the cat or dog listed to make your adoption choice.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Petful API
 
-### Code Splitting
+This is the API for the Petful job and training tracker app.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Set up
 
-### Analyzing the Bundle Size
+#### To deploy locally for development
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+1. Clone this repository to your local machine and change to its directory: `git clone URL/SSH petful-server && cd $_`
+2. Make a fresh start of the git history for this project with `rm -rf .git && git init`
+3. Install the node dependencies `npm install`
+4. Run the server in development mode (nodemon) with `npm run dev`
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Deploying the API
 
-### Advanced Configuration
+This API is currently set up to be deployed to Heroku. To do so, follow these steps:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Create a new repo on Heroku for the API by running: `heroku create`
+2. Deploy the API to Heroku with `npm run deploy`
+3. Verify that the API is running using the provided URL and Postman.
