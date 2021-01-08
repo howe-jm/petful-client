@@ -11,7 +11,10 @@
     background-color: #B0CFD4;
     color: #2B303A;
     padding: 5px;
-    width: 18vw;
+}
+
+.description {
+    max-width: 18vw;
 }
 
 .pet-card-container img {
