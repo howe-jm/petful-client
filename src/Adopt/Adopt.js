@@ -85,6 +85,7 @@ class Adopt extends Component {
         <img src={imageURL} alt={description} />
         <p>Breed: {breed}</p>
         <p>Gender: {gender}</p>
+        <p>Description: {description}</p>
         <p>Story: {story}</p>
       </div>
     );
