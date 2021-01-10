@@ -42,6 +42,34 @@ Live App: https://petful-client-three.vercel.app/
 
 This is the API for the Petful pet adoption app.
 
+## Petful API Endpoints
+### /people
+
+GET - Will retrieve the next person in the queue.
+
+POST - Will add a new person to the end of the queue. This used to ensure that there are always five people in the queue.
+
+### /people/all
+
+GET - Will retrieve all people currently in the queue to adopt a pet.
+
+### /pets
+
+GET - Will retrieve the next pets (both dog and cat) in the queue.
+
+DELETE - Will remove the person at the top of the queue, and the pet of the chosen type (supplied as a string variable as either 'dog' or 'cat'). This function is used to remove a person and pet from the queue once they've been matched.
+
+### /allpets
+
+GET - Will return all pets in the queue. While
+
+### /return-
+
+POST - Will return a pet to the back of the queue. This is used to preserve the pets list so that the simulated adoption service does not run out of pets to match with people.
+
+### 
+
+
 ### Set up
 
 #### To deploy locally for development
