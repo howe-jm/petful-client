@@ -63,13 +63,9 @@ DELETE - Will remove the person at the top of the queue, and the pet of the chos
 
 GET - Will return all pets in the queue. While
 
-### /return-
+### /return
 
 POST - Will return a pet to the back of the queue. This is used to preserve the pets list so that the simulated adoption service does not run out of pets to match with people.
-
-### 
-
-
 ### Set up
 
 #### To deploy locally for development
