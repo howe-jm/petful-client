@@ -2,7 +2,6 @@ body {
     background-color: #F7E7B6;
     text-align: center;
     overflow-x: hidden;
-    overflow-y: hidden;
     font-family: 'Indie Flower', cursive;
 }
 
@@ -15,12 +14,12 @@ body {
 }
 
 .main-container {
-    display: flex;
-    flex-flow: column wrap;
-    background-color:  #2B303A;
-    color: #B0CFD4;
+    background-color: #2b303a;
+    color: #b0cfd4;
     width: 800px;
-    height: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
 }
 
 .main-container h1 {

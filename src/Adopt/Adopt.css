@@ -13,10 +13,6 @@
     padding: 5px;
 }
 
-.description {
-    width: 12vw;
-}
-
 .pet-card-container img {
     max-height: 200px;
     width: auto;
